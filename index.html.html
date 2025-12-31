@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy New Year 2026</title>
+<link rel="stylesheet" href="style.css">
+<style>
+    *{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Segoe UI',sans-serif;
+}
+
+body{
+  height:100vh;
+  background:radial-gradient(circle at top,#0f2027,#203a43,#2c5364);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+  color:white;
+}
+
+.card{
+  backdrop-filter: blur(10px);
+  background:rgba(255,255,255,0.15);
+  padding:35px;
+  width:380px;
+  text-align:center;
+  border-radius:20px;
+  box-shadow:0 0 30px rgba(255,255,255,0.2);
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-10px);}
+}
+
+h1{
+  font-size:32px;
+  color:#ffd166;
+  text-shadow:0 0 15px gold;
+}
+
+h2{
+  font-size:45px;
+  margin:10px 0;
+  color:#f1faee;
+  text-shadow:0 0 20px cyan;
+}
+
+p{
+  margin:15px 0;
+  line-height:1.6;
+}
+
+input{
+  width:100%;
+  padding:10px;
+  border:none;
+  border-radius:10px;
+  outline:none;
+  margin-bottom:15px;
+}
+
+button{
+  padding:10px 25px;
+  border:none;
+  border-radius:25px;
+  background:linear-gradient(45deg,#ffbe0b,#fb5607);
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{
+  transform:scale(1.05);
+}
+
+#output{
+  margin-top:15px;
+  font-size:18px;
+  color:#80ffdb;
+}
+
+</style>
+</head>
+<body>
+
+<div class="fireworks"></div>
+
+<div class="card">
+  <h1>✨ Happy New Year ✨</h1>
+  <h2>2026</h2>
+  <p>
+    May 2026 fill your life with<br>
+    happiness, success & new beginnings 🌟
+  </p>
+
+  <input type="text" id="name" placeholder="Enter Your Name">
+  <button onclick="wish()">Send Wishes 🎁</button>
+
+  <div id="output"></div>
+</div>
+
+<script>
+    function wish(){
+  let name = document.getElementById("name").value;
+  if(name===""){
+    name="Friend";
+  }
+
+  document.getElementById("output").innerHTML =
+    "🎆 Happy New Year 2026, <b>" + name + "</b>!<br>May all your dreams come true 💖";
+}
+
+</script>
+</body>
+</html>
